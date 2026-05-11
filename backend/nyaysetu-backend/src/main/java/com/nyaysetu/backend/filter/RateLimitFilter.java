@@ -113,7 +113,7 @@ public class RateLimitFilter extends OncePerRequestFilter {
             } else {
 
                 // Time remaining before next refill
-                long waitForRefill = probe.getRoundedSecondsToWait();
+                long waitForRefill = probe.getNanosToWaitForRefill() / 1_000_000_000;
 
                 log.warn(
                         "Rate limit exceeded for IP: {} on endpoint: {}",
