@@ -53,7 +53,12 @@ public class SecurityConfig {
                     .map(String::trim)
                     .filter(s -> !s.isEmpty())
                     .collect(java.util.stream.Collectors.toList());
-            configuration.setAllowedOrigins(origins);
+            boolean hasWildcardOrigin = origins.stream().anyMatch(origin -> origin.contains("*"));
+            if (hasWildcardOrigin) {
+                configuration.setAllowedOriginPatterns(origins);
+            } else {
+                configuration.setAllowedOrigins(origins);
+            }
         } else {
             // Use patterns for wildcard with allowCredentials(true)
             configuration.setAllowedOriginPatterns(java.util.Collections.singletonList("*"));
