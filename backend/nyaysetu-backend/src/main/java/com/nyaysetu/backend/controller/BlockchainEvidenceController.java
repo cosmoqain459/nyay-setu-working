@@ -18,7 +18,7 @@ import java.util.*;
  * Controller for blockchain-secured evidence management
  */
 @RestController
-@RequestMapping("/api/evidence")
+@RequestMapping("/evidence")
 @RequiredArgsConstructor
 @Slf4j
 public class BlockchainEvidenceController {

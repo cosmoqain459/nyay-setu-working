@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/police")
+@RequestMapping("/police")
 @RequiredArgsConstructor
 @Slf4j
 public class FirController {

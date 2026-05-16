@@ -14,7 +14,7 @@ import java.util.UUID;
  * Exposes endpoints for frontend Timeline component.
  */
 @RestController
-@RequestMapping("/api/cases")
+@RequestMapping("/cases")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class CaseEventController {

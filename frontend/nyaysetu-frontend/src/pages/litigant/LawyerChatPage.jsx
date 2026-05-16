@@ -191,7 +191,7 @@ export default function LawyerChatPage() {
 
             // Assuming response has id
             const docId = res.data.id;
-            const downloadUrl = `/api/documents/${docId}/download`;
+            const downloadUrl = `/api/v1/documents/${docId}/download`;
 
             const fileMsg = `Shared file: ${file.name}`;
             await handleSendMessage(fileMsg, 'FILE', downloadUrl);
@@ -268,7 +268,7 @@ export default function LawyerChatPage() {
             });
 
             const docId = res.data.id;
-            const downloadUrl = `/api/documents/${docId}/download`;
+            const downloadUrl = `/api/v1/documents/${docId}/download`;
 
             await handleSendMessage("🎤 Voice Message", 'AUDIO', downloadUrl);
         } catch (error) {

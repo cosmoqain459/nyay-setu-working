@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
  * Controller for Vakil-Friend AI Chat-First Case Filing
  */
 @RestController
-@RequestMapping("/api/vakil-friend")
+@RequestMapping("/vakil-friend")
 @RequiredArgsConstructor
 @Slf4j
 public class VakilFriendController {

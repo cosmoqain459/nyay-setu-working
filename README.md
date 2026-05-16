@@ -44,6 +44,13 @@ Because a large percentage of citizens cannot afford legal fees and courts face 
 - **AI Infrastructure:** Groq API (Llama 3.1) for extreme low-latency processing, backed by local Ollama instances for strict offline privacy guarantees.
 - **Storage:** Local secure hashing block storage.
 
+## API Versioning Strategy
+
+This project implements a robust API versioning strategy starting from `v1`. 
+- The stable release of our APIs is accessible under the `/api/v1/` prefix.
+- A global `WebMvcConfigurer` automatically prefixes all backend controllers. 
+- Any future breaking changes will be introduced under a new version (e.g., `/api/v2/`), ensuring backward compatibility for existing client applications.
+
 ## Quick Start
 
 Getting started is simple. To spin up the platform locally:

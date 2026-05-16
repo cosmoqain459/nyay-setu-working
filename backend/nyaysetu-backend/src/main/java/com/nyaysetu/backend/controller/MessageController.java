@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/cases/{caseId}/messages")
+@RequestMapping("/cases/{caseId}/messages")
 @RequiredArgsConstructor
 public class MessageController {
 

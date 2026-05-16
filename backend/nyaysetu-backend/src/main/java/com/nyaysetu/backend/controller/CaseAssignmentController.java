@@ -18,7 +18,7 @@ import java.util.UUID;
  * Controller for case assignment operations
  */
 @RestController
-@RequestMapping("/api/cases")
+@RequestMapping("/cases")
 @RequiredArgsConstructor
 @Slf4j
 public class CaseAssignmentController {

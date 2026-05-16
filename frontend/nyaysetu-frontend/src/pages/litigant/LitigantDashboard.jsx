@@ -238,7 +238,7 @@ export default function LitigantDashboard() {
                                         onClick={() => {
                                             if (confirm('Are you sure you want to approve this draft? This will notify your lawyer.')) {
                                                 import('../../services/api').then(({ default: api }) => {
-                                                    api.put(`/api/cases/${draft.id}/approve-draft`, { approved: true })
+                                                    api.put(`/api/v1/cases/${draft.id}/approve-draft`, { approved: true })
                                                         .then(() => {
                                                             alert('Draft Approved! Your status is now updated.');
                                                             window.location.reload();

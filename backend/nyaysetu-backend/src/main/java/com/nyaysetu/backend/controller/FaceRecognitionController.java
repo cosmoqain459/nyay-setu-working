@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/face")
+@RequestMapping("/face")
 @RequiredArgsConstructor
 @Slf4j
 public class FaceRecognitionController {

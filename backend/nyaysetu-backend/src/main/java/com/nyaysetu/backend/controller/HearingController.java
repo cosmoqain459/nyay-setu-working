@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/hearings")
+@RequestMapping("/hearings")
 @RequiredArgsConstructor
 @Slf4j
 public class HearingController {

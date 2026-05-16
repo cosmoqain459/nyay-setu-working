@@ -464,7 +464,7 @@ function OverviewTab({ caseData, onHireLawyer }) {
                                 onClick={() => {
                                     if (confirm('Are you sure you want to approve this draft? This will notify your lawyer.')) {
                                         import('../../services/api').then(({ caseAssignmentAPI, default: api }) => {
-                                            api.put(`/api/cases/${caseData.id}/approve-draft`, { approved: true })
+                                            api.put(`/api/v1/cases/${caseData.id}/approve-draft`, { approved: true })
                                                 .then(() => {
                                                     alert('Draft Approved! Your lawyer can now submit to court.');
                                                     window.location.reload();

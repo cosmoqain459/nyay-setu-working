@@ -17,7 +17,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/judge")
+@RequestMapping("/judge")
 @RequiredArgsConstructor
 @Slf4j
 public class JudgeController {

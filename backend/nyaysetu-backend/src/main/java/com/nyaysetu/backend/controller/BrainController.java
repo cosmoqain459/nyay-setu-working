@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * REST Controller for the Central AI Brain
  */
 @RestController
-@RequestMapping("/api/brain")
+@RequestMapping("/brain")
 @RequiredArgsConstructor
 @Slf4j
 public class BrainController {

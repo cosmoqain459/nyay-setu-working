@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/client/fir")
+@RequestMapping("/client/fir")
 @RequiredArgsConstructor
 @Slf4j
 public class ClientFirController {

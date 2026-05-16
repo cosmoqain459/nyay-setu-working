@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/lawyer")
+@RequestMapping("/lawyer")
 @RequiredArgsConstructor
 @Slf4j
 public class LawyerController {
