@@ -41,16 +41,16 @@ export default function Footer() {
     ];
 
     const quickLinks = [
-        { label: t('common:header.nav.features'), href: '#features' },
+        { label: t('common:header.nav.features'), href: '/#features' },
         { label: t('common:header.nav.constitution'), href: '/constitution', isRoute: true },
         { label: t('common:header.nav.aiAssistant'), action: () => setShowAIModal(true) },
         { label: t('common:header.nav.about'), href: '/about', isRoute: true }
     ];
 
     const legalLinks = [
-        { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Terms of Service', href: '/terms' },
-        { label: 'Disclaimer', href: '/disclaimer' }
+        { label: t('landing:footer.privacyPolicy'), href: '/privacy' },
+        { label: t('landing:footer.termsOfService'), href: '/terms' },
+        { label: t('landing:footer.disclaimer'), href: '/disclaimer' }
     ];
 
     return (
