@@ -517,6 +517,7 @@
   "vakilFriend": {
     "welcome": "🙏 Namaste! I am Nyay Saarthi, your AI legal assistant. How can I help you today?",
     "offlineMessage": "🙏 Namaste! I am Nyay Saarthi (offline mode). The backend server is not responding. Please start the backend and refresh.",
+    "connectError": "Unable to connect to Nyay Saarthi. Please check your internet and try again.",
     "deepResearchError": "Deep research failed.",
     "speechNotSupported": "Your browser does not support speech recognition. Please use Chrome or Edge.",
     "noSession": "⚠️ No active session. Please refresh the page.",
