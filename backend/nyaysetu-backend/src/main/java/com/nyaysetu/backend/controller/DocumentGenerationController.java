@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
  * Proxies to the Python LawGPT microservice for RAG-grounded document drafting.
  */
 @RestController
-@RequestMapping("/api/documents/generate")
+@RequestMapping("/documents/generate")
 @RequiredArgsConstructor
 @Slf4j
 public class DocumentGenerationController {
