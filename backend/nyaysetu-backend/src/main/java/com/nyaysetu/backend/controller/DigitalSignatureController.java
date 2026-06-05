@@ -17,13 +17,13 @@ public class DigitalSignatureController {
     @PostMapping("/sign")
     @PreAuthorize("hasAnyRole('LAWYER', 'LITIGANT')")
     public ResponseEntity<SignatureMetadata> signDocument(
-            @RequestParam String documentId,
-            @RequestParam String signerName) {
-        SignatureMetadata metadata = digitalSignatureService.signDocument(documentId, signerName);
+            @RequestParam String documentId) {
+        SignatureMetadata metadata = digitalSignatureService.signDocument(documentId);
         return ResponseEntity.ok(metadata);
     }
 
     @GetMapping("/verify/{signatureHash}")
+    @PreAuthorize("hasAnyRole('LAWYER', 'JUDGE', 'LITIGANT')")
     public ResponseEntity<Boolean> verifySignature(@PathVariable String signatureHash) {
         boolean isValid = digitalSignatureService.verifySignature(signatureHash);
         return ResponseEntity.ok(isValid);
