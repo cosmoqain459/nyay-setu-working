@@ -6,6 +6,7 @@ import com.nyaysetu.backend.entity.CaseEntity;
 import com.nyaysetu.backend.entity.DocumentEntity;
 import com.nyaysetu.backend.entity.DocumentStorageType;
 import com.nyaysetu.backend.entity.User;
+import com.nyaysetu.backend.entity.VisibilityLevel;
 import com.nyaysetu.backend.repository.CaseRepository;
 import com.nyaysetu.backend.repository.DocumentRepository;
 import com.nyaysetu.backend.repository.UserRepository;
@@ -62,7 +63,7 @@ public class DocumentManagementService {
                 .fileHash(fileHash)
                 .uploadIp(uploadIp)
                 .isVerified(fileHash != null)
-                .visibilityLevel("RESTRICTED") // Default: only uploader, their lawyer, and judge can see
+                .visibilityLevel(VisibilityLevel.RESTRICTED) // Default: only uploader, their lawyer, and judge can see
                 .build();
 
         DocumentEntity saved = documentRepository.save(document);
@@ -117,15 +118,14 @@ public class DocumentManagementService {
      * Check if user has access to a document
      */
     private boolean hasDocumentAccess(DocumentEntity doc, Long userId, String userRole, boolean isCaseLawyer) {
-        String visibility = doc.getVisibilityLevel() != null ? doc.getVisibilityLevel() : "PUBLIC";
+        VisibilityLevel visibility = doc.getVisibilityLevel() != null ? doc.getVisibilityLevel() : VisibilityLevel.PUBLIC;
         
         return switch (visibility) {
-            case "PUBLIC" -> true; // Everyone can see public documents
-            case "RESTRICTED" -> "JUDGE".equals(userRole)
+            case PUBLIC -> true; // Everyone can see public documents
+            case RESTRICTED -> "JUDGE".equals(userRole)
                     || (userId != null && userId.equals(doc.getUploadedBy()))
                     || isCaseLawyer; // Assigned lawyers can access restricted case documents
-            case "SEALED" -> "JUDGE".equals(userRole); // Only judge
-            default -> false; // Unknown visibility level - deny by default
+            case SEALED -> "JUDGE".equals(userRole); // Only judge
         };
     }
 
